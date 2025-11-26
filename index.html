@@ -1,84 +1,373 @@
-ToolStation.world – Free Online Tools for Daily Productivity
-
-ToolStation.world is a clean, fast, and reliable collection of free online productivity tools designed to help students, professionals, creators, and everyday users complete tasks quickly without installing anything. All tools run directly inside your browser, ensuring speed, privacy, and convenience.
-
-Explore the live tools here:
-👉 https://toolstation.world
-
-
-👉 https://toolstation.world/tools
-⭐ What Is ToolStation.world?
-
-ToolStation.world is a lightweight, ad-friendly, and mobile-optimized tool hub offering practical utilities like:
-
-Text tools (Word Counter, Case Converter, Text Cleaner)
-
-Image tools (Image Compressor, JPG ↔ PNG Converter, Image to PDF)
-
-YouTube Thumbnail Finder
-
-BMI & EMI Calculators
-
-QR Code Generator
-
-And many more coming…
-
-Each tool is built to load instantly, work offline when cached, and support both mobile and desktop users.
-
-Visit now → https://toolstation.world
-
-🚀 Key Features
-1. 100% Free Tools
-
-No subscription, no login, no restrictions. You simply open the tool and use it instantly.
-
-2. No Data Storage
-
-All operations (image compression, PDF generation, text analysis) happen client-side in your browser.
-Nothing is uploaded to any server — your data stays private.
-
-3. Fast & Lightweight
-
-All tools are optimized with pure HTML, CSS, and JavaScript for the fastest user experience.
-
-4. Google AdSense Friendly
-
-ToolStation.world follows all ad-friendly guidelines to ensure safe, high-quality traffic.
-
-🧰 Available Tools
-
-Here are the most popular utilities available at ToolStation.world:
-
-Tool	Description	Link
-Word Counter	Accurate word & character count	https://toolstation.world/tools/word-counter
-Image Compressor
-Reduce image size without losing quality
-https://toolstation.world/tools/image-compress
-QR Code Generator
-Generate QR codes instantly
-https://toolstation.world/tools/qr
-JPG ↔ PNG Converter
-Convert image formats online
-https://toolstation.world/tools/jpg-png
-YouTube Thumbnail Finder
-Download HD thumbnails
-https://toolstation.world/tools/youtube-thumbnail
-EMI Calculator
-Calculate loan monthly installment
-https://toolstation.world/tools/emi
-BMI Calculator
-Check Body Mass Index
-https://toolstation.world/tools/bmi
-
-More tools added regularly.
-
-🌐 Why ToolStation.world Exists
-
-The internet is filled with complicated or ad-heavy tool websites.
-ToolStation.world was created to provide clean, simple and fast tools without popups, downloads or tracking.
-
-Use it anytime → https://toolstation.world
-
-📌 Support & Suggestions
-
-Want a new tool added? Open an issue in this repo or contact via site footer.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolStation.world - Free Online Productivity Tools</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4bb543;
+            --warning: #ffc107;
+            --text: #333;
+            --text-light: #6c757d;
+            --gradient: linear-gradient(135deg, #4361ee, #3a0ca3);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7ff;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 2.8rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .intro {
+            background-color: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+        
+        .intro p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .feature-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .tools-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tools-table th {
+            background: var(--gradient);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        .tools-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .tools-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .tools-table tr:hover {
+            background-color: #f8f9ff;
+        }
+        
+        .tool-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        
+        .tool-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        .why-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .why-section p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        .support-section {
+            text-align: center;
+            background: var(--light);
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .tools-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+            
+            .intro, .why-section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🛠️</span>
+                ToolStation.world
+            </div>
+            <p class="tagline">Clean, fast, and reliable collection of free online productivity tools for students, professionals, creators, and everyday users.</p>
+            <a href="https://toolstation.world" class="cta-button">Explore Tools Now</a>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section>
+            <div class="intro">
+                <h2 class="section-title">What Is ToolStation.world?</h2>
+                <p>ToolStation.world is a <span class="highlight">lightweight, ad-friendly, and mobile-optimized</span> tool hub offering practical utilities that run directly in your browser. No installations, no downloads, just instant access to the tools you need.</p>
+                <p>All tools are designed to load instantly, work offline when cached, and support both mobile and desktop users.</p>
+                <p style="text-align: center; margin-top: 25px;">
+                    <a href="https://toolstation.world/tools" class="cta-button" style="background: var(--accent); color: white;">View All Tools</a>
+                </p>
+            </div>
+            
+            <h2 class="section-title">🚀 Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💯</div>
+                    <h3 class="feature-title">100% Free Tools</h3>
+                    <p>No subscription, no login, no restrictions. You simply open the tool and use it instantly.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">No Data Storage</h3>
+                    <p>All operations happen client-side in your browser. Your data stays private and secure.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Fast & Lightweight</h3>
+                    <p>Optimized with pure HTML, CSS, and JavaScript for the fastest user experience.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Ad-Friendly</h3>
+                    <p>Follows all ad-friendly guidelines to ensure safe, high-quality traffic.</p>
+                </div>
+            </div>
+            
+            <h2 class="section-title">🧰 Available Tools</h2>
+            <table class="tools-table">
+                <thead>
+                    <tr>
+                        <th>Tool</th>
+                        <th>Description</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Word Counter</td>
+                        <td>Accurate word & character count</td>
+                        <td><a href="https://toolstation.world/tools/word-counter" class="tool-link">Open Tool</a></td>
+                    </tr>
+                    <tr>
+                        <td>Image Compressor</td>
+                        <td>Reduce image size without losing quality</td>
+                        <td><a href="https://toolstation.world/tools/image-compress" class="tool-link">Open Tool</a></td>
+                    </tr>
+                    <tr>
+                        <td>QR Code Generator</td>
+                        <td>Generate QR codes instantly</td>
+                        <td><a href="https://toolstation.world/tools/qr" class="tool-link">Open Tool</a></td>
+                    </tr>
+                    <tr>
+                        <td>JPG ↔ PNG Converter</td>
+                        <td>Convert image formats online</td>
+                        <td><a href="https://toolstation.world/tools/jpg-png" class="tool-link">Open Tool</a></td>
+                    </tr>
+                    <tr>
+                        <td>YouTube Thumbnail Finder</td>
+                        <td>Download HD thumbnails</td>
+                        <td><a href="https://toolstation.world/tools/youtube-thumbnail" class="tool-link">Open Tool</a></td>
+                    </tr>
+                    <tr>
+                        <td>EMI Calculator</td>
+                        <td>Calculate loan monthly installment</td>
+                        <td><a href="https://toolstation.world/tools/emi" class="tool-link">Open Tool</a></td>
+                    </tr>
+                    <tr>
+                        <td>BMI Calculator</td>
+                        <td>Check Body Mass Index</td>
+                        <td><a href="https://toolstation.world/tools/bmi" class="tool-link">Open Tool</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="text-align: center; margin-top: 20px; color: var(--text-light);">More tools added regularly!</p>
+            
+            <div class="why-section">
+                <h2 class="section-title">🌐 Why ToolStation.world Exists</h2>
+                <p>The internet is filled with complicated or ad-heavy tool websites. ToolStation.world was created to provide clean, simple and fast tools without popups, downloads or tracking.</p>
+                <p>Whether you're a student working on an assignment, a professional preparing documents, or a creator optimizing content, ToolStation.world has the tools you need to be more productive.</p>
+                <p style="text-align: center; margin-top: 25px;">
+                    <a href="https://toolstation.world" class="cta-button">Use It Anytime</a>
+                </p>
+            </div>
+            
+            <div class="support-section">
+                <h2 class="section-title">📌 Support & Suggestions</h2>
+                <p>Want a new tool added? Have suggestions for improvement? We'd love to hear from you!</p>
+                <p style="margin-top: 20px;">
+                    <a href="https://toolstation.world" class="cta-button" style="background: var(--primary); color: white;">Contact Us</a>
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 ToolStation.world - Free Online Tools for Daily Productivity</p>
+            <p style="margin-top: 10px; opacity: 0.8;">All tools are 100% free, private, and run directly in your browser.</p>
+        </div>
+    </footer>
+</body>
+</html>
